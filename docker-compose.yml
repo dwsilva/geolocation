@@ -1,0 +1,13 @@
+version: "3"
+services:
+    geolocation_db:
+      image: postgres
+      container_name: "postgres-geolocation"
+      environment:
+        - POSTGRES_DB=geolocation
+        - POSTGRES_USER=root
+        - POSTGRES_PASSWORD=root
+      ports:
+        - "5432:5432"
+      volumes:
+        - "./db:/var/lib/postgresql/data/"
